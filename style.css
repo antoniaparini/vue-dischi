@@ -1,0 +1,94 @@
+/*GENERAL STYLES*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #192d3c;
+    color: #fff;
+
+}
+.app-header {
+    padding: 10px 10px 5px;
+    background-color: #2b3a47;
+}
+
+.app-header img {
+    max-height: 50px;
+}
+
+.filter_container {
+    width: 400px;
+    height: 100px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+img {
+    max-width: 100%;
+}
+
+.genre-filter {
+    margin-right: 10px;
+}
+.selezione_genere {
+    width: 100px;
+    background-color: #fff;
+    text-transform: uppercase;
+    font-size: 10px;
+    color: black;
+}
+
+/*CONTAINER*/
+.cd-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 50px 10px;
+    list-style: none;
+
+}
+
+.cd {
+    flex-basis: 200px;
+    background-color: #2b3a47;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 20px;
+    padding: 20px;
+
+}
+
+.cd h4 {
+    margin: 10px 0;
+}
+
+.cd .author,
+.cd .year {
+    margin-bottom: 10px;
+    color: gray;
+}
+
+.cd .author {
+    font-size: 20px;
+}
+
+
+.cd img {
+    max-width: 150px;
+    margin-top: 20px;
+}
+
+
+
+

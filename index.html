@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+        
+        
+        <title>Dischi Musicali</title>
+    </head>
+    <body>
+
+        <div id="app">
+            <!--HEADER-->
+            <header class="app-header">
+                <img src="logo.png" alt="">
+            </header>
+
+            <!--FILTER-->
+            <div class="filter_container">
+                <div class="genre-filter">
+                    Filter by genre
+                </div>
+                
+                <select class="selezione_genere" v-model="filtro_selezione">
+                    <i class="fas fa-angle-down"></i>
+                    <option value="All">All</option>
+                    <option :value="genre" v-for="genre in genres">{{ genre }}</option>
+                </select>
+            </div>
+            <!--CD CONTAINER-->
+            <div class="cd-container">
+                <div class="cd" v-for= "main_album in cds"
+                v-if="filtro_selezione == main_album.genre || filtro_selezione == 'All'">
+                    <img :src="main_album.poster" :alt="main_album.title">
+                    <h4>{{ main_album.title }}</h4>
+                    <span class="author">{{ main_album.author }}</span>
+                    <span class="year">{{ main_album.year }}</span>
+                    <span class="genre">{{ main_album.genre }}</span>
+                </div>
+            </div>
+        </div>
+        <!--VUE JS-->
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <!--JS - AXIOS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" charset="utf-8"></script>
+        <script src="main.js" charset="utf-8"></script>
+    </body>
+</html>
